@@ -1,0 +1,115 @@
+%%%%%%%%%%%%%%%%%%%%%%%
+%%% Document Set up %%%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{amsart}
+
+
+% you can add extra packages if you need them
+\usepackage{amsfonts, amssymb, amscd, amsmath, enumerate, verbatim, calc, thumbpdf, mathrsfs, graphicx, multicol, tabu}
+
+
+\setlength{\oddsidemargin}{0.25in}  % please do not change
+\setlength{\evensidemargin}{0.25in}  % please do not change
+\setlength{\marginparwidth}{0in}  % please do not change
+\setlength{\marginparsep}{0in}  % please do not change
+\setlength{\marginparpush}{0in}  % please do not change
+\setlength{\topmargin}{0in}  % please do not change
+\setlength{\footskip}{.3in}  % please do not change
+\setlength{\textheight}{8.75in}  % please do not change
+\setlength{\textwidth}{6in}  % please do not change
+\setlength{\parskip}{4pt}  % please do not change
+
+
+\theoremstyle{plain}  % default
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{mythm}[thm]{My Great Result}
+
+\theoremstyle{definition}
+\newtheorem{defin}[thm]{{Definition}}
+\newtheorem{ex}[thm]{Example}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem*{note}{Note}
+\newtheorem{case}{Case}
+
+\numberwithin{equation}{thm}
+
+\newcommand{\dims}{\operatorname{dims}}
+\newcommand{\rank}{\operatorname{rank}}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Document Meta Information %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+
+\title[Abstract Algebra Project]{Investigation of resolving sets and metric dimension}
+\thanks{Dogan Comez}
+\author[K.~ Ryan]{Kyle Ryan\\{Advisors: Trevor McGuire, Warren Shreve}}
+
+
+\address{Department of Mathematics 2750\\ North Dakota State University\\PO BOX 6050\\ Fargo, ND 58108-6050\\ USA}
+
+\email{kyleryanmn@gmail.com, trevor.mcguire@ndsu.edu, warren.shreve@ndsu.edu}
+
+
+
+
+
+\maketitle
+% \setcounter{page}{***} % Please do not change this line
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+%%% Introduction %%%
+%%%%%%%%%%%%%%%%%%%%
+1. introduction
+\begin{abstract}
+        For any graph G it is possible to describe each of its vertices uniquely with respect to an ordered subset of vertices of G called a resolving set.
+    In this project, we investigate properties of associated with minimal resolving sets, known as bases and conditions under which changing G affects its bases. 
+\end{abstract}
+    The basics of what you're doing: relevant tools, defs techniques etc
+ \begin{defin}[Representation of vertex(with respect to W)]:\\
+    For an ordered subset $W=(w_1, w_2, ..., w_i, w_{i+1}, ...)$ of vertices in $G$, the representation of a vertex $v \in G$ with respect to $W$ denoted $rep(v/W)$ is: \\
+  $rep(v/W)=(d(v,w_1), d(v,w_2), ..., d(v,w_i), d(v,w_{i+1}), ... )$
+ \end{defin}
+    
+ \begin{defin}[Resolving Set]:\\
+  
+ \end{defin}
+ 
+ \begin{defin}[Basis of a graph]:\\
+  
+ \end{defin}
+ 
+ \begin{defin}[Metric Dimension]:\\
+  
+ \end{defin}
+
+ \begin{defin}
+  what is known, what is not known
+ \end{defin}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% References and Citations %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cite{Chartrand:2010:GDF:1941879}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{mybibj;l}  % add references to the list of references saved in the file mybib.bib
+
+
+\end{document}
