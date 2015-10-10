@@ -9,7 +9,6 @@
 \usepackage{amsfonts, amssymb, amscd, amsmath, amsthm, enumerate, verbatim, calc, 
 thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
 
-
 \setlength{\oddsidemargin}{0.25in}  % please do not change
 \setlength{\evensidemargin}{0.25in}  % please do not change
 \setlength{\marginparwidth}{0in}  % please do not change
@@ -59,7 +58,7 @@ thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
 
 \title[Abstract Algebra Project]{Investigation of resolving sets and metric dimension}
 \thanks{Dogan Comez}
-\author[K.~ Ryan]{Kyle Ryan\\{Advisors: Trevor McGuire, Warren Shreve}}
+\author[K.~ R. Ryan]{Kyle Ryan\\{Advisors: Trevor McGuire, Warren Shreve}}
 
 
 \address{Department of Mathematics 2750\\ North Dakota State University\\PO BOX 6050\\ Fargo, ND 58108-6050\\ USA}
@@ -143,82 +142,105 @@ $\ \exists\ w \in W$ s.t. $\left| d(v_1,w)-d(v_2,w)\right| > 1$
 Suppose that we construct a graph $G$ and basis $W$
 \end{proof}
 
-\begin{ex}
-Observe the following\\
-\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm,
-                    thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
-\node[main node] (1) {x};
-\node[main node] (2) [above right of=1] {};
-\node[main node] (3) [above left of=1] {y};
-\node[main node] (4) [above of=2] {};
-\node[main node] (5) [above of=3] {};
+%\begin{ex}
+%Observe the following\\
+%\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm,
+%                    thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
+%\node[main node] (1) {x};
+%\node[main node] (2) [above right of=1] {};
+%\node[main node] (3) [above left of=1] {y};
+%\node[main node] (4) [above of=2] {};
+%\node[main node] (5) [above of=3] {};
 
-\path[thick]
-  (1) edge (2)
-      edge (3)
-  (2) edge (3)
-      edge (4)
-  (3) edge (5);
+%\path[thick]
+%  (1) edge (2)
+%      edge (3)
+%  (2) edge (3)
+%      edge (4)
+%  (3) edge (5);
 
-\node[main node] (8) [right of=2] {x};
-\node[main node] (6) [below right of=8]{};
-\node[main node] (7) [above right of=6] {y};
-\node[main node] (9) [above of=7] {};
-\node[main node] (10) [above of=8] {};
+%\node[main node] (8) [right of=2] {x};
+%\node[main node] (6) [below right of=8]{};
+%\node[main node] (7) [above right of=6] {y};
+%\node[main node] (9) [above of=7] {};
+%\node[main node] (10) [above of=8] {};
 
-\path[thick]
-  (6) edge (7)
-      edge (8)
-  (7) edge (8)
-      edge (9)
-  (8) edge (10);
-\end{tikzpicture}
+%\path[thick]
+%  (6) edge (7)
+%      edge (8)
+%  (7) edge (8)
+%      edge (9)
+%  (8) edge (10);
+%\end{tikzpicture}
 \\
-\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm,
-                    thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
-\node[main node] (1) {};
-\node[main node] (2) [above right of=1] {};
-\node[main node] (3) [above left of=1] {x};
-\node[main node] (4) [above of=2] {y};
-\node[main node] (5) [above of=3] {};
+%\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm,
+%                    thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
+%\node[main node] (1) {};
+%\node[main node] (2) [above right of=1] {};
+%\node[main node] (3) [above left of=1] {x};
+%\node[main node] (4) [above of=2] {y};
+%\node[main node] (5) [above of=3] {};
 
-\path[thick]
-  (1) edge (2)
-      edge (3)
-  (2) edge (3)
-      edge (4)
-  (3) edge (5);
+%\path[thick]
+%  (1) edge (2)
+%      edge (3)
+%  (2) edge (3)
+%      edge (4)
+%  (3) edge (5);
 
-\node[main node] (8) [right of=2] {};
-\node[main node] (6) [below right of=8]{x};
-\node[main node] (7) [above right of=6] {};
-\node[main node] (9) [above of=7] {y};
-\node[main node] (10) [above of=8] {};
+%\node[main node] (8) [right of=2] {};
+%\node[main node] (6) [below right of=8]{x};
+%\node[main node] (7) [above right of=6] {};
+%\node[main node] (9) [above of=7] {y};
+%\node[main node] (10) [above of=8] {};
 
-\path[thick]
-  (6) edge (7)
-      edge (8)
-  (7) edge (8)
-      edge (9)
-  (8) edge (10);
-\end{tikzpicture}
+%\path[thick]
+%  (6) edge (7)
+%      edge (8)
+%  (7) edge (8)
+%      edge (9)
+%  (8) edge (10);
+%\end{tikzpicture}
 
-\end{ex}
+%sudo apt-get install texlive-latex-extra\end{ex}
 
 
 \section{Upper and Lower Bounds on Metric Dimension}
 
 \begin{lem}
+ let $G$ be a unicyclic graph. Let $L$ be the cycle in $G$. Let $H = G-L$ then metric dimension of $G \leq$ metric dimension of $MD(H)\-$
+\end{lem}
+
+
+\begin{lem}
  Let $G$ be a graph with a bridge $(u,v)$ s.t. $G-(u,v)$ has components $H_1, H_2$ such that $H_1$ 
- has at least one degree > 2 vertex. Then for any basis $W$ of $G$, $W\nsubseteq H_2$.
+ has at least one degree $>$ 2 vertex. Then for any basis $W$ of $G$, $W\nsubseteq H_2$.
 \end{lem}
 \begin{proof}
  
 \end{proof}
 \begin{lem}
+ Let $G$ be a graph with a cut vertex $v$ and basis $W$. If $deg(v)>2$ or if for two components $H_1, H_2$ of $G-v$,
+ $H_1$ has a vertex of degree $>$ 2, $W\nsubseteq H_2$.
+\end{lem}
+\begin{proof}
+ Suppose that $W \subset H$. 
+ Let $v$ be a cut vertex of $G$ s.t. $G-v$ has more than 2 components. Since $W \subset H$, the path from any vertex not in $H$ to any element of $W$ must pass through $v$.
+ Then there exist vertices $u_1,\ u_2$ adjacent to $v$ such that $d(u_1, w_i) = d(u_2, w_i) = d(v, w_i) + 1$ for all $w_i \in W$.
+ In this case, $r(u_1/W) = r(u_2/W)$. Then $W$ is not a resolving set for $G$, by contradiction $W \nsubseteq H$.\\
+ We can show without loss of generality that the same is true for any cut vertex $v$ whenever some component of $G-v$ other than $H$ is not path.\\
+ Observe that if $G$ is not a path it contains at least one $deg > 2$ vertex. 
+ Let $l$ be a $deg > 2$ vertex in $G$ s.t. $\forall u_i$ s.t. $deg(u_i)>2, d(u_i, v) \greq d(l)$ 
+ \end{proof}
+
+\begin{lem}
  Let $G$ be any graph. Let $H$ be the graph obtained by edge contractions on $G$. 
  If only the number of degree 2 vertices is changed, 
 \end{lem}
+\begin{proof}
+ 
+\end{proof}
+
 
 
 

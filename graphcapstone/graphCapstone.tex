@@ -9,7 +9,6 @@
 \usepackage{amsfonts, amssymb, amscd, amsmath, amsthm, enumerate, verbatim, calc, 
 thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
 
-
 \setlength{\oddsidemargin}{0.25in}  % please do not change
 \setlength{\evensidemargin}{0.25in}  % please do not change
 \setlength{\marginparwidth}{0in}  % please do not change
@@ -124,7 +123,13 @@ Furthermore we will attempt to investigate what properties of these graphs make 
     (2) edge (3)
     (1) edge [-,dashed] (3);
 \end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%       SECTION 1, B-Encodings          %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{encodability of graphs with respect to their bases}
+
+
   \begin{defin}[Representation set of a graph]:\\
   The representation set of a graph with respect to a basis $W$ is the set $H=\{r(v/W)\mid v\in G\}$.   
   \end{defin}
@@ -140,7 +145,10 @@ $G$ is encodable under $W$ if and only if $\ \forall$ nonadjacent $\ v_1,\ v_2\i
 $\ \exists\ w \in W$ s.t. $\left| d(v_1,w)-d(v_2,w)\right| > 1$ 
 \end{lem}
 \begin{proof}
-Suppose that we construct a graph $G$ and basis $W$
+Let $G$ be a graph with basis $W$. Let $R$ be the representation set of $G$ with respect to $W$. 
+Assume that for some pair of vertices $v_1,\ v_2\ \in G$, $\ \exists\ w \in W$ s.t. $\left| d(v_1,w)-d(v_2,w)\right| > 1$.
+If we construct a graph $H$ from $R$ following the encoding scheme descibed above, $v_1,\ v_2$ will be adjacent in $H$. 
+Then $H \neq G$ and so $G$ is not encodable under $W$.
 \end{proof}
 
 \begin{ex}
@@ -221,20 +229,27 @@ Observe the following\\
  
 \end{proof}
 \begin{lem}
- Let $G$ be a graph with a cut vertex $v$ and basis $W$. If $deg(v)>2$ or if for two components $H_1, H_2$ of $G-v$,
- $H_1$ has a vertex of degree $>$ 2, $W\nsubseteq H_2$.
+ Let $G$ be a graph with a cut vertex $v$ and resolving set $W$. Let $H$ be a component of $G-v$. 
+ If $G-v$ has more than two components or if for any component $L$ of $G-v$, $L$ is not a path, then $W\nsubseteq H$.
 \end{lem}
 \begin{proof}
- 
-\end{proof}
+ Suppose that $W \subset H$. 
+ Let $v$ be a cut vertex of $G$ s.t. $G-v$ has more than 2 components. Since $W \subset H$, the path from any vertex not in $H$ to any element of $W$ must pass through $v$.
+ Then there exist vertices $u_1,\ u_2$ adjacent to $v$ such that $d(u_1, w_i) = d(u_2, w_i) = d(v, w_i) + 1$ for all $w_i \in W$.
+ In this case, $r(u_1/W) = r(u_2/W)$. Then $W$ cannot be not a resolving set for $G$.\\
+ We can show without loss of generality that the same is true for any cut vertex $v$ whenever some component of $G-v$ other than $H$ is not path.\\
+ Observe that if $G$ is not a path it contains at least one $deg > 2$ vertex. 
+ Let $l$ be a $deg > 2$ vertex in $G$ s.t. $\forall u_i$ s.t. $deg(u_i)>2, d(u_i, v) \geq d(l, v)$. 
+ Then by the same argument as above we see there are 2 adjacent vertices with the same representation and again $W$ cannot be a resolving set of $G$.
+ \end{proof}
 
-\begin{lem}
- Let $G$ be any graph. Let $H$ be the graph obtained by edge contractions on $G$. 
- If only the number of degree 2 vertices is changed, 
-\end{lem}
-\begin{proof}
+%\begin{lem}
+% Let $G$ be any graph. Let $H$ be the graph obtained by edge contractions on $G$. 
+% If only the number of degree 2 vertices is changed, 
+%\end{lem}
+%\begin{proof}
  
-\end{proof}
+%\end{proof}
 
 
 
@@ -247,7 +262,7 @@ Observe the following\\
 \cite{Chartrand:2010:GDF:1941879}
 \nocite{*}
 \bibliographystyle{plain}
-\bibliography{mybibjkl}  % add references to the list of references saved in the file mybib.bib
+\bibliography{mybib}  % add references to the list of references saved in the file mybib.bib
 
 
 \end{document}
