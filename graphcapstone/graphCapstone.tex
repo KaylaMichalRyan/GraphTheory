@@ -156,6 +156,38 @@ Then $H \neq G$ and so $G$ is not encodable under $W$.
 
 \begin{ex}
 Observe the following\\
+
+\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm,
+                    thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
+\node[main node] (1) {x};
+\node[main node] (2) [above right of=1] {};
+\node[main node] (3) [above left of=1] {};
+\node[main node] (4) [above of=2] {y};
+\node[main node] (5) [above of=3] {};
+
+\path[thick]
+  (1) edge (2)
+      edge (3)
+  (2) edge (3)
+      edge (4)
+  (3) edge (5);
+
+\node[main node] (8) [right of=2] {x};
+\node[main node] (6) [below right of=8]{};
+\node[main node] (7) [above right of=6] {};
+\node[main node] (9) [above of=7] {y};
+\node[main node] (10) [above of=8] {};
+
+\path[thick]
+  (6) edge (7)
+      edge (8)
+      edge [dashed] (10)
+  (7) edge (8)
+      edge (9)
+  (8) edge (10);
+  
+\end{tikzpicture}
+
 \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm,
                     thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
 \node[main node] (1) {x};
@@ -169,7 +201,9 @@ Observe the following\\
       edge (3)
   (2) edge (3)
       edge (4)
-  (3) edge (5);
+  (3) edge (5)
+  (5) edge [dashed] (2)
+      edge [dashed] (4);
 
 \node[main node] (8) [right of=2] {x};
 \node[main node] (6) [below right of=8]{};
@@ -180,39 +214,16 @@ Observe the following\\
 \path[thick]
   (6) edge (7)
       edge (8)
+      edge [dashed] (9)
+      edge [dashed] (10)
   (7) edge (8)
       edge (9)
-  (8) edge (10);
+  (8) edge (10)
+  (9) edge [dashed] (10);
 \end{tikzpicture}
 \\
-\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm,
-                    thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
-\node[main node] (1) {};
-\node[main node] (2) [above right of=1] {};
-\node[main node] (3) [above left of=1] {x};
-\node[main node] (4) [above of=2] {y};
-\node[main node] (5) [above of=3] {};
-
-\path[thick]
-  (1) edge (2)
-      edge (3)
-  (2) edge (3)
-      edge (4)
-  (3) edge (5);
-
-\node[main node] (8) [right of=2] {};
-\node[main node] (6) [below right of=8]{x};
-\node[main node] (7) [above right of=6] {};
-\node[main node] (9) [above of=7] {y};
-\node[main node] (10) [above of=8] {};
-
-\path[thick]
-  (6) edge (7)
-      edge (8)
-  (7) edge (8)
-      edge (9)
-  (8) edge (10);
-\end{tikzpicture}
+The bull graph pictured above has basis size 2. There are 4 possible bases for it up to isomorphism but is W-encodable only under one of them.
+For the other 3 bases it is possible to add edges (shown dotted) without affecting $r(v/W)$ for any $v \in G$.
 
 \end{ex}
 
@@ -226,6 +237,9 @@ Observe the following\\
  $MD(G) \leq 3 + MD(H) -l$ if $L$ is an even cycle
 \end{lem}
 \begin{proof}
+Odd case: \\
+Even case: \\
+  I am still working on tidying up the proof of this. I will add it when it is ready for print.
 \end{proof}
 
 %\begin{lem}
