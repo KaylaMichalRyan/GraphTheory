@@ -97,11 +97,11 @@ thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
  \end{defin}
  
  \begin{defin}[Basis of a graph]:\\
-  A resolving set $W$ of $G$ is called a $basis\ of\ G$.
+  A resolving set $W$ of $G$ is called a $basis\ of\ G$ if for any other resolving set $H$ of $G$, $\mid H\mid \geq \mid W\mid$
  \end{defin}
  
  \begin{defin}[Metric Dimension]:\\
-  The metric dimension of a graph $G$ is the order of any basis for $G$.
+  The metric dimension of a graph $G$ denoted $MD(G)$ is the order of any basis for $G$.
  \end{defin}
 
 
@@ -115,13 +115,16 @@ Furthermore we will attempt to investigate what properties of these graphs make 
 \end{ex}
  \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm,
                     thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
-  \node[main node] (1) {};
+  \node[main node] (1) {x};
   \node[main node] (2) [right of=1] {};
-  \node[main node] (3) [above of=2] {};
+  \node[main node] (3) [right of=2] {x};
+  \node[main node] (4) [right of=3] {};
+  \node[main node] (5) [above of=4] {y};
   \path[thick]
-    (1) edge (2)
-    (2) edge (3)
-    (1) edge [-,dashed] (3);
+    (1)	edge (2)
+    (3) edge (4)
+    (4) edge (5)
+    (3) edge [-,dashed] (5);
 \end{tikzpicture}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -217,17 +220,21 @@ Observe the following\\
 \section{Upper and Lower Bounds on Metric Dimension}
 
 \begin{lem}
- let $G$ be a unicyclic graph. Let $L$ be the cycle in $G$. Let $H = G-L$ then metric dimension of $G \leq$ metric dimension of $MD(H)\-$
-\end{lem}
-
-
-\begin{lem}
- Let $G$ be a graph with a bridge $(u,v)$ s.t. $G-(u,v)$ has components $H_1, H_2$ such that $H_1$ 
- has at least one degree $>$ 2 vertex. Then for any basis $W$ of $G$, $W\nsubseteq H_2$.
+ let $G$ be a unicyclic graph. Let $L$ be the cycle in $G$. Let $l$ be the number of $deg > 2$ vertices of $L$. 
+ Let $H = G-L$. Then:\\ 
+ $MD(G) \leq 2 + MD(H) -l$ if $L$ is an odd cycle\\
+ $MD(G) \leq 3 + MD(H) -l$ if $L$ is an even cycle
 \end{lem}
 \begin{proof}
- 
 \end{proof}
+
+%\begin{lem}
+% Let $G$ be a graph with a bridge $(u,v)$ s.t. $G-(u,v)$ has components $H_1, H_2$ such that $H_1$ 
+% has at least one degree $>$ 2 vertex. Then for any basis $W$ of $G$, $W\nsubseteq H_2$.
+%\end{lem}
+%\begin{proof}
+ 
+%\end{proof}
 \begin{lem}
  Let $G$ be a graph with a cut vertex $v$ and resolving set $W$. Let $H$ be a component of $G-v$. 
  If $G-v$ has more than two components or if for any component $L$ of $G-v$, $L$ is not a path, then $W\nsubseteq H$.
