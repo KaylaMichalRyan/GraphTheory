@@ -85,7 +85,7 @@ thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
 \section{introduction}
 
     %The basics of what you're doing: relevant tools, defs techniques etc%
-    For this investigation we will begin with several basic defintions that might not be part of a typical introduction to graph theory.
+    For this investigation we will begin with several basic definitions that might not be part of a typical introduction to graph theory.
 
  \begin{defin}[Representation of vertex(with respect to W)]:\\
     For an ordered subset $W=(w_1, w_2, ..., w_i, w_{i+1}, ...)$ of vertices in $G$, the representation of a vertex $v \in G$ with respect to $W$ denoted $rep(v/W)$ is: \\
@@ -150,7 +150,7 @@ $\ \exists\ w \in W$ s.t. $\left| d(v_1,w)-d(v_2,w)\right| > 1$
 \begin{proof}
 Let $G$ be a graph with basis $W$. Let $R$ be the representation set of $G$ with respect to $W$. 
 Assume that for some pair of vertices $v_1,\ v_2\ \in G$, $\ \exists\ w \in W$ s.t. $\left| d(v_1,w)-d(v_2,w)\right| > 1$.
-If we construct a graph $H$ from $R$ following the encoding scheme descibed above, $v_1,\ v_2$ will be adjacent in $H$. 
+If we construct a graph $H$ from $R$ following the encoding scheme described above, $v_1,\ v_2$ will be adjacent in $H$. 
 Then $H \neq G$ and so $G$ is not encodable under $W$.
 \end{proof}
 
@@ -187,6 +187,7 @@ Observe the following\\
   (8) edge (10);
   
 \end{tikzpicture}
+
 \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm,
                     thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
 \node[main node] (1) {x};
@@ -221,7 +222,8 @@ Observe the following\\
   (9) edge [dashed] (10);
 \end{tikzpicture}
 \\
-The above graph has basis size 2. It is
+The bull graph pictured above has basis size 2. There are 4 possible bases for it up to isomorphism but is W-encodable only under one of them.
+For the other 3 bases it is possible to add edges (shown dotted) without affecting $r(v/W)$ for any $v \in G$.
 
 \end{ex}
 
@@ -235,6 +237,9 @@ The above graph has basis size 2. It is
  $MD(G) \leq 3 + MD(H) -l$ if $L$ is an even cycle
 \end{lem}
 \begin{proof}
+Odd case: \\
+Even case: \\
+  I am still working on tidying up the proof of this. I will add it when it is ready for print.
 \end{proof}
 
 %\begin{lem}
@@ -258,6 +263,23 @@ The above graph has basis size 2. It is
  Let $l$ be a $deg > 2$ vertex in $G$ s.t. $\forall u_i$ s.t. $deg(u_i)>2, d(u_i, v) \geq d(l, v)$. 
  Then by the same argument as above we see there are 2 adjacent vertices with the same representation and again $W$ cannot be a resolving set of $G$.
  \end{proof}
+
+\begin{lem}
+ Let $G$ be a graph with a bridge $(u,v)$.\\
+ Let $H, S$ be the largest connected induced subgraphs of $G$ such that $v\notin H, u\notin S$.\\
+ Let $L$ be the $uv$ path separating $H$ and $S$.\\
+ Let $G', H', S', L'$ be the same objects described above after subdivision of $(u,v)$ with vertex $e$ and the additional constraint that
+ $e \notin H' \cup S'$.\\
+ \\
+ $i:$ If only $H$ contains a basis element then $MD(G)\leq MD(G')$.\\
+ $ii:$ If $H$ and $S$ both contain basis elements then $MD(G')\leq MD(G)$
+\end{lem}
+\begin{proof}
+ $i)$ Since $S'$ contains no basis elements, $S'$ must be a path.\\
+ Then since $r: S \mapsto \mathbb{N}^{MD(G')}$ is injective  
+ $ii)$ff.
+\end{proof}
+
 
 %\begin{lem}
 % Let $G$ be any graph. Let $H$ be the graph obtained by edge contractions on $G$. 

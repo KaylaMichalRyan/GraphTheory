@@ -85,11 +85,11 @@ thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
 \section{introduction}
 
     %The basics of what you're doing: relevant tools, defs techniques etc%
-    For this investigation we will begin with several basic defintions that might not be part of a typical introduction to graph theory.
+    For this investigation we will begin with several basic definitions that might not be part of a typical introduction to graph theory.
 
  \begin{defin}[Representation of vertex(with respect to W)]:\\
-    For an ordered subset $W=(w_1, w_2, ..., w_i, w_{i+1}, ...)$ of vertices in $G$, the representation of a vertex $v \in G$ with respect to $W$ denoted $rep(v/W)$ is: \\
-  $rep(v/W)=(d(v,w_1), d(v,w_2), ..., d(v,w_i), d(v,w_{i+1}), ... )$
+    For an ordered subset $W=(w_1, w_2, ...)$ of vertices in $G$, the representation of a vertex $v \in G$ with respect to $W$ denoted $rep(v/W)$ is: \\
+  $rep(v/W)=(d(v,w_1), d(v,w_2), ...)$
  \end{defin}
     
  \begin{defin}[Resolving Set]:\\
@@ -150,7 +150,7 @@ $\ \exists\ w \in W$ s.t. $\left| d(v_1,w)-d(v_2,w)\right| > 1$
 \begin{proof}
 Let $G$ be a graph with basis $W$. Let $R$ be the representation set of $G$ with respect to $W$. 
 Assume that for some pair of vertices $v_1,\ v_2\ \in G$, $\ \exists\ w \in W$ s.t. $\left| d(v_1,w)-d(v_2,w)\right| > 1$.
-If we construct a graph $H$ from $R$ following the encoding scheme descibed above, $v_1,\ v_2$ will be adjacent in $H$. 
+If we construct a graph $H$ from $R$ following the encoding scheme described above, $v_1,\ v_2$ will be adjacent in $H$. 
 Then $H \neq G$ and so $G$ is not encodable under $W$.
 \end{proof}
 
@@ -263,6 +263,24 @@ Even case: \\
  Let $l$ be a $deg > 2$ vertex in $G$ s.t. $\forall u_i$ s.t. $deg(u_i)>2, d(u_i, v) \geq d(l, v)$. 
  Then by the same argument as above we see there are 2 adjacent vertices with the same representation and again $W$ cannot be a resolving set of $G$.
  \end{proof}
+
+\begin{lem}
+ Let $G$ be a graph with a bridge $(u,v)$.\\
+ Let $H, S$ be the largest connected induced subgraphs of $G$ such that $v\notin H, u\notin S$.\\
+ Let $L$ be the $uv$ path separating $H$ and $S$.\\
+ Let $G', H', S', L'$ be the same objects described above after subdivision of $(u,v)$ with vertex $e$ and the additional constraint that
+ $e \notin H' \cup S'$.\\
+ \\
+ $i:$ If only $H$ contains a basis element then $MD(G)\leq MD(G')$.\\
+ $ii:$ If $H$ and $S$ both contain basis elements then $MD(G')\leq MD(G)$
+\end{lem}
+\begin{proof}
+ $i)$ Since $S'$ contains no basis elements, $S'$ must be a path.\\
+ We can contract $(u,e)$ to $u$ to construct $G$ from $G'$.\\
+ Then for each element $v_{s'}$ of $S'$, $rep(v_s/W) = rep(v_s/W) - (1,...,1)$ 
+ \\$ii)$ff.
+\end{proof}
+
 
 %\begin{lem}
 % Let $G$ be any graph. Let $H$ be the graph obtained by edge contractions on $G$. 
