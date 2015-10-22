@@ -88,8 +88,8 @@ thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
     For this investigation we will begin with several basic definitions that might not be part of a typical introduction to graph theory.
 
  \begin{defin}[Representation of vertex(with respect to W)]:\\
-    For an ordered subset $W=(w_1, w_2, ..., w_i, w_{i+1}, ...)$ of vertices in $G$, the representation of a vertex $v \in G$ with respect to $W$ denoted $rep(v/W)$ is: \\
-  $rep(v/W)=(d(v,w_1), d(v,w_2), ..., d(v,w_i), d(v,w_{i+1}), ... )$
+    For an ordered subset $W=(w_1, w_2, ...)$ of vertices in $G$, the representation of a vertex $v \in G$ with respect to $W$ denoted $rep(v/W)$ is: \\
+  $rep(v/W)=(d(v,w_1), d(v,w_2), ...)$
  \end{defin}
     
  \begin{defin}[Resolving Set]:\\
@@ -272,12 +272,14 @@ Even case: \\
  $e \notin H' \cup S'$.\\
  \\
  $i:$ If only $H$ contains a basis element then $MD(G)\leq MD(G')$.\\
- $ii:$ If $H$ and $S$ both contain basis elements then $MD(G')\leq MD(G)$
+ $ii:$ If $H$ and $S$ both contain basis elements then $MD(G')\eq MD(G)$.
 \end{lem}
 \begin{proof}
  $i)$ Since $S'$ contains no basis elements, $S'$ must be a path.\\
- Then since $r: S \mapsto \mathbb{N}^{MD(G')}$ is injective  
- $ii)$ff.
+ We can contract $(u,e)$ to $u$ to construct $G$ from $G'$.\\
+ Then for each element $v_{s'}$ of $S'$, $rep(v_s/W) = rep(v_s/W) - (1,...,1)$ 
+ \\$ii)$First we show that $MD(G')\leq MD(G)$.\\
+ Now we show that $MD(G)\leq MD(G')$.\\
 \end{proof}
 
 
