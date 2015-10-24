@@ -285,6 +285,7 @@ For the other 3 bases it is possible to add edges (shown dotted) without affecti
  Let $G', H', S', L', W'$ be the same objects described above after subdivision of $(u,v)$ with vertex $e$ and the additional constraint that
  $e \notin H' \cup S'$.\\
  \\
+<<<<<<< HEAD
  %$i:$ If only $H$ contains a basis element then $MD(G)\leq MD(G')$.\\
  %$ii:$ If $H$ and $S$ both contain basis elements then $MD(G') = MD(G)$
  If $H$ and $S$ both contain basis elements then $MD(G') = MD(G)$
@@ -327,6 +328,17 @@ And without loss of generality by considering basis elements in $V$:
 \end{align*}
 Then $d(v_s, e) >< d(u_h, e)$, a clear contradiction.\\
 Thus $MD(G)=MD(G')$.
+=======
+ $i:$ If only $H$ contains a basis element then $MD(G)\leq MD(G')$.\\
+ $ii:$ If $H$ and $S$ both contain basis elements then $MD(G')= MD(G)$.
+\end{lem}
+\begin{proof}
+ $i)$ Since $S'$ contains no basis elements, $S'$ must be a path.\\
+ We can contract $(u,e)$ to $u$ to construct $G$ from $G'$.\\
+ Then for each element $v_{s'}$ of $S'$, $rep(v_s/W) = rep(v_s/W) - (1,...,1)$\\ 
+ \\$ii)$First we show that $MD(G')\leq MD(G)$.\\
+ Now we show that $MD(G)\leq MD(G')$.\\
+>>>>>>> ef84966ad86e02b5520c645fd02f2ea7c5e19502
 \end{proof}
 
 
