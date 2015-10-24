@@ -88,16 +88,25 @@ thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
     For this investigation we will begin with several basic definitions that might not be part of a typical introduction to graph theory.
 
  \begin{defin}[Representation of vertex(with respect to W)]:\\
-    For an ordered subset $W=(w_1, w_2, ..., w_i, w_{i+1}, ...)$ of vertices in $G$, the representation of a vertex $v \in G$ with respect to $W$ denoted $rep(v/W)$ is: \\
-  $rep(v/W)=(d(v,w_1), d(v,w_2), ..., d(v,w_i), d(v,w_{i+1}), ... )$
+    For an ordered subset $W=(w_1, w_2, ...)$ of vertices in $G$, the representation of a vertex $v \in G$ with respect to $W$ denoted $rep(v/W)$ is:
+  \begin{align*}
+  rep(v/W)=(d(v,w_1), d(v,w_2), ...)
+  \end{align*}
  \end{defin}
     
  \begin{defin}[Resolving Set]:\\
-  An ordered subset $W \subset V(G)$ is called a resolving set of G if\\ $\forall v_1, v_2 \in V(G)$  , $rep(v_1/W) \neq  rep(v_2/W)$.
+  An ordered subset $W \subset V(G)$ is called a resolving set of G if for all $v_1, v_2 \in V(G)$: 
+  \begin{align*}
+  rep(v_1/W) \neq  rep(v_2/W)
+  \end{align*}
  \end{defin}
  
  \begin{defin}[Basis of a graph]:\\
-  A resolving set $W$ of $G$ is called a $basis\ of\ G$ if for any other resolving set $H$ of $G$, $\mid H\mid \geq \mid W\mid$
+  A resolving set $W$ of $G$ is called a $basis\ of\ G$ if for any other resolving set $H$ of $G$, 
+  \begin{align*}
+   |H| \geq |W|
+  \end{align*}
+
  \end{defin}
  
  \begin{defin}[Metric Dimension]:\\
@@ -144,8 +153,10 @@ Furthermore we will attempt to investigate what properties of these graphs make 
   \end{defin}
 
 \begin{lem}
-$G$ is encodable under $W$ if and only if $\ \forall$ nonadjacent $\ v_1,\ v_2\in G$:\\
-$\ \exists\ w \in W$ s.t. $\left| d(v_1,w)-d(v_2,w)\right| > 1$ 
+$G$ is encodable under $W$ if and only if for all nonadjacent $\ v_1,\ v_2\in G$ there exists $w \in W$ such that:
+\begin{align*}
+| d(v_1,w)-d(v_2,w)| > 1 
+\end{align*}
 \end{lem}
 \begin{proof}
 Let $G$ be a graph with basis $W$. Let $R$ be the representation set of $G$ with respect to $W$. 
@@ -230,17 +241,19 @@ For the other 3 bases it is possible to add edges (shown dotted) without affecti
 
 \section{Upper and Lower Bounds on Metric Dimension}
 
-\begin{lem}
- let $G$ be a unicyclic graph. Let $L$ be the cycle in $G$. Let $l$ be the number of $deg > 2$ vertices of $L$. 
- Let $H = G-L$. Then:\\ 
- $MD(G) \leq 2 + MD(H) -l$ if $L$ is an odd cycle\\
- $MD(G) \leq 3 + MD(H) -l$ if $L$ is an even cycle
-\end{lem}
-\begin{proof}
-Odd case: \\
-Even case: \\
-  I am still working on tidying up the proof of this. I will add it when it is ready for print.
-\end{proof}
+%\begin{lem}
+% let $G$ be a unicyclic graph. Let $L$ be the cycle in $G$. Let $l$ be the number of $deg > 2$ vertices of $L$. 
+% Let $H = G-L$. Then:
+% \begin{align*}
+% MD(G) &\leq 2 + MD(H) -l\ if\ L\ is\ an\ odd\ cycle\\
+% MD(G) &\leq 3 + MD(H) -l\ if\ L\ is\ an\ even\ cycle
+% \end{align*}
+%\end{lem}
+%\begin{proof}
+%Odd case: \\
+%Even case: \\
+%  I am still working on tidying up the proof of this. I will add it when it is ready for print.
+%\end{proof}
 
 %\begin{lem}
 % Let $G$ be a graph with a bridge $(u,v)$ s.t. $G-(u,v)$ has components $H_1, H_2$ such that $H_1$ 
@@ -260,24 +273,60 @@ Even case: \\
  In this case, $r(u_1/W) = r(u_2/W)$. Then $W$ cannot be not a resolving set for $G$.\\
  We can show without loss of generality that the same is true for any cut vertex $v$ whenever some component of $G-v$ other than $H$ is not path.\\
  Observe that if $G$ is not a path it contains at least one $deg > 2$ vertex. 
- Let $l$ be a $deg > 2$ vertex in $G$ s.t. $\forall u_i$ s.t. $deg(u_i)>2, d(u_i, v) \geq d(l, v)$. 
+ Let $l$ be a $deg > 2$ vertex in $G$ s.t. for all$u_i$ s.t. $deg(u_i)>2, d(u_i, v) \geq d(l, v)$. 
  Then by the same argument as above we see there are 2 adjacent vertices with the same representation and again $W$ cannot be a resolving set of $G$.
  \end{proof}
 
-\begin{lem}
+\begin{lem}[Bridge Subdivision Lemma]
  Let $G$ be a graph with a bridge $(u,v)$.\\
  Let $H, S$ be the largest connected induced subgraphs of $G$ such that $v\notin H, u\notin S$.\\
  Let $L$ be the $uv$ path separating $H$ and $S$.\\
- Let $G', H', S', L'$ be the same objects described above after subdivision of $(u,v)$ with vertex $e$ and the additional constraint that
+ Let $W$ be a basis of $G$.\\
+ Let $G', H', S', L', W'$ be the same objects described above after subdivision of $(u,v)$ with vertex $e$ and the additional constraint that
  $e \notin H' \cup S'$.\\
  \\
- $i:$ If only $H$ contains a basis element then $MD(G)\leq MD(G')$.\\
- $ii:$ If $H$ and $S$ both contain basis elements then $MD(G')\leq MD(G)$
+ %$i:$ If only $H$ contains a basis element then $MD(G)\leq MD(G')$.\\
+ %$ii:$ If $H$ and $S$ both contain basis elements then $MD(G') = MD(G)$
+ If $H$ and $S$ both contain basis elements then $MD(G') = MD(G)$
 \end{lem}
-\begin{proof}
- $i)$ Since $S'$ contains no basis elements, $S'$ must be a path.\\
- Then since $r: S \mapsto \mathbb{N}^{MD(G')}$ is injective  
- $ii)$ff.
+\begin{proof}$\ $\\
+ %$i)$ Since $S'$ contains no basis elements, $S'$ must be a path.\\
+ %We can contract $(u,e)$ to $u$ to construct $G$ from $G'$.\\
+ %Then for each element $v_{s'}$ of $S'$, $rep(v_s/W) = rep(v_s/W) - (1,...,1)$ \\\\
+ %$ii)$ Suppose that $MD(G') > MD(G)$, this can only be true if for some $u_h \in H$, $v_s\in S$
+ Suppose that $MD(G') > MD(G)$, this can only be true if for some $u_h \in H$, $v_s\in S$
+\begin{align*}
+ r(u_h/W) + (\underbrace{0,\dots}_{n},1,\dots) = r(v_s/W) + (\underbrace{1,\dots}_{n},0,\dots)
+\end{align*}
+Where the first n elements of each representation correspond to the distances from elements of $W_h$ up to rearrangement.\\
+Suppose that such a pair of vertices does exist. Then for all $w_h\in W_H \subset H$,\\ $d(v_s, w_h)<d(u_h, w_h)$.\\
+Every $v_sw_h$ path for all $w_h$ passes through $L$. Then $d(v_s, w_h)=d(v_s, u)+ d(u, w_h)$. 
+By the triangle inequality, $d(u_h, w_h) \leq d(u_h, u) + d(u, w_h)$ for all $u_h$ in $H$.
+Then $d(v_s, u)<d(u_h,u)$ and consequently $d(v_s, e)<d(u_h, e)$.\\
+Without loss of generality we can show that because for all $w_s\in W_S\subset S$, $d(u_h, w_s)<d(v_s, w_s)$ we must have
+$d(u_h, e)<d(v_s,e)$. This is a contradiction. Then such a pair of vertices cannot possibly exist and so we have $MD(G') \leq MD(G)$.\\
+Now suppose that $MD(G) > MD(G')$\\
+In this case we see that we must have a pair of vertices $u_h \in H$, $v_s\in S$ such that
+\begin{align*}
+ r(u_h/W') + (\underbrace{1,\dots}_{n},0,\dots) = r(v_s/W') + (\underbrace{0,\dots}_{n},1,\dots)
+\end{align*}
+Where the first n elements of each representation correspond to the distances from elements of $W'_h$ up to rearrangement. 
+Again we will suppose that such a pair of vertices exists.\\ 
+Then we can see that for basis elements in $H$:
+\begin{align*}
+d(u_h, w_h) + 1 &= d(v_s,w_h)\\
+d(u_h, u) + d(u, w_h) + 1 &= d(v_s, u) + d(u, w_h)\\
+d(u_h, u) + 1 &= d(v_s, u)\\
+d(u_h, u) + 1 &> d(v_s, u) - 1\\
+d(u_h, u) + d(u, e) &> d(v_s, u) - d(u, e)\\
+d(u_h, e) &> d(v_s, e)
+\end{align*}
+And without loss of generality by considering basis elements in $V$:
+\begin{align*}
+ d(v_s, e) &> d(u_h, e)
+\end{align*}
+Then $d(v_s, e) >< d(u_h, e)$, a clear contradiction.\\
+Thus $MD(G)=MD(G')$.
 \end{proof}
 
 
