@@ -9,6 +9,9 @@
 \usepackage{amsfonts, amssymb, amscd, amsmath, amsthm, enumerate, verbatim, calc, 
 thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
 
+\usetikzlibrary{snakes}
+\tikzstyle{printersafe}=[snake=snake,segment amplitude=0 pt]
+
 \setlength{\oddsidemargin}{0.25in}  % please do not change
 \setlength{\evensidemargin}{0.25in}  % please do not change
 \setlength{\marginparwidth}{0in}  % please do not change
@@ -75,7 +78,7 @@ thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
 
 \begin{abstract}
         For any graph G it is possible to describe each of its vertices uniquely with respect to an ordered subset of vertices of G called a resolving set.
-    In this project, we investigate properties of associated with minimal resolving sets, known as bases and conditions under which changing G affects its bases. 
+    In this project, we investigate properties associated with minimal resolving sets, known as bases and conditions under which changing G affects its bases. 
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%
@@ -133,7 +136,7 @@ Furthermore we will attempt to investigate what properties of these graphs make 
     (1)	edge (2)
     (3) edge (4)
     (4) edge (5)
-    (3) edge [-,dashed] (5);
+    (3) edge [dashed, printersafe] (5);
 \end{tikzpicture}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -192,7 +195,7 @@ Observe the following\\
 \path[thick]
   (6) edge (7)
       edge (8)
-      edge [dashed] (10)
+      edge [dashed, printersafe] (10)
   (7) edge (8)
       edge (9)
   (8) edge (10);
@@ -213,8 +216,8 @@ Observe the following\\
   (2) edge (3)
       edge (4)
   (3) edge (5)
-  (5) edge [dashed] (2)
-      edge [dashed] (4);
+  (5) edge [dashed, printersafe] (2)
+      edge [dashed, printersafe] (4);
 
 \node[main node] (8) [right of=2] {x};
 \node[main node] (6) [below right of=8]{};
@@ -225,12 +228,12 @@ Observe the following\\
 \path[thick]
   (6) edge (7)
       edge (8)
-      edge [dashed] (9)
-      edge [dashed] (10)
+      edge [dashed, printersafe] (9)
+      edge [dashed, printersafe] (10)
   (7) edge (8)
       edge (9)
   (8) edge (10)
-  (9) edge [dashed] (10);
+  (9) edge [dashed, printersafe] (10);
 \end{tikzpicture}
 \\
 The bull graph pictured above has basis size 2. There are 4 possible bases for it up to isomorphism but is W-encodable only under one of them.

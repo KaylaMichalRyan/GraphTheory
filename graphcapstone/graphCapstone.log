@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.10.9)  23 OCT 2015 20:11
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.10.9)  26 OCT 2015 13:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -513,8 +513,43 @@ File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
 hs.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
 )))
-\c@thm=\count138
-\c@case=\count139
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarysnake
+s.code.tex
+File: tikzlibrarysnakes.code.tex 2008/02/05 v2.10 (rcs-revision 1.6)
+
+
+Package tikz Warning: Snakes have been superseded by decorations. Please use th
+e decoration libraries instead of the snakes library on input line 14.
+
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.pathmorphing.code.tex
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.code.tex
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen185
+\pgfdecoratedremainingdistance=\dimen186
+\pgfdecoratedinputsegmentcompleteddistance=\dimen187
+\pgfdecoratedinputsegmentremainingdistance=\dimen188
+\pgf@decorate@distancetomove=\dimen189
+\pgf@decorate@repeatstate=\count138
+\pgfdecorationsegmentamplitude=\dimen190
+\pgfdecorationsegmentlength=\dimen191
+)
+\tikz@lib@dec@box=\box69
+)
+(/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
+athmorphing.code.tex))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.pathreplacing.code.tex
+(/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
+athreplacing.code.tex))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.shapes.code.tex
+(/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.s
+hapes.code.tex)))
+\c@thm=\count139
+\c@case=\count140
 
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrow
 s.code.tex
@@ -522,48 +557,48 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
-\arrowsize=\dimen185
+\arrowsize=\dimen192
 ))
 (./graphCapstone.aux)
 \openout1 = `graphCapstone.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Try loading font information for U+msa on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Try loading font information for U+msa on input line 59.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 56.
+LaTeX Font Info:    Try loading font information for U+msb on input line 59.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 56.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count140
-\scratchdimen=\dimen186
-\scratchbox=\box69
-\nofMPsegments=\count141
-\nofMParguments=\count142
+\scratchcounter=\count141
+\scratchdimen=\dimen193
+\scratchbox=\box70
+\nofMPsegments=\count142
+\nofMParguments=\count143
 \everyMPshowfont=\toks42
-\MPscratchCnt=\count143
-\MPscratchDim=\dimen187
-\MPnumerator=\count144
-\makeMPintoPDFobject=\count145
+\MPscratchCnt=\count144
+\MPscratchDim=\dimen194
+\MPnumerator=\count145
+\makeMPintoPDFobject=\count146
 \everyMPtoPDFconversion=\toks43
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -616,27 +651,27 @@ e
 ABD: EveryShipout initializing macros
 
 Class amsart Warning: Abstract should precede \maketitle in AMS document classe
-s; reported on input line 76.
+s; reported on input line 79.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 281--291
+Underfull \hbox (badness 10000) in paragraph at lines 284--294
 
  []
 
 [3] (./graphCapstone.bbl) [4] (./graphCapstone.aux) ) 
 Here is how much of TeX's memory you used:
- 12531 strings out of 495059
- 224243 string characters out of 3182030
- 280343 words of memory out of 3000000
- 15280 multiletter control sequences out of 15000+200000
+ 13173 strings out of 495059
+ 246341 string characters out of 3182030
+ 345243 words of memory out of 3000000
+ 15894 multiletter control sequences out of 15000+200000
  13975 words of font info for 55 fonts, out of 3000000 for 9000
  175 hyphenation exceptions out of 8191
- 56i,15n,55p,403b,664s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,15n,77p,403b,835s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/
@@ -653,7 +688,7 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on graphCapstone.pdf (4 pages, 199895 bytes).
+Output written on graphCapstone.pdf (4 pages, 209067 bytes).
 PDF statistics:
  84 PDF objects out of 1000 (max. 8388607)
  61 compressed objects within 1 object stream
