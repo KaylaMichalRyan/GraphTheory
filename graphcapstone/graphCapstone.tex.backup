@@ -9,6 +9,9 @@
 \usepackage{amsfonts, amssymb, amscd, amsmath, amsthm, enumerate, verbatim, calc, 
 thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
 
+\usetikzlibrary{snakes}
+\tikzstyle{printersafe}=[snake=snake,segment amplitude=0 pt]
+
 \setlength{\oddsidemargin}{0.25in}  % please do not change
 \setlength{\evensidemargin}{0.25in}  % please do not change
 \setlength{\marginparwidth}{0in}  % please do not change
@@ -75,7 +78,7 @@ thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
 
 \begin{abstract}
         For any graph G it is possible to describe each of its vertices uniquely with respect to an ordered subset of vertices of G called a resolving set.
-    In this project, we investigate properties of associated with minimal resolving sets, known as bases and conditions under which changing G affects its bases. 
+    In this project, we investigate properties associated with minimal resolving sets, known as bases and conditions under which changing G affects its bases. 
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%
@@ -88,15 +91,10 @@ thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
     For this investigation we will begin with several basic definitions that might not be part of a typical introduction to graph theory.
 
  \begin{defin}[Representation of vertex(with respect to W)]:\\
-<<<<<<< HEAD
     For an ordered subset $W=(w_1, w_2, ...)$ of vertices in $G$, the representation of a vertex $v \in G$ with respect to $W$ denoted $rep(v/W)$ is:
   \begin{align*}
   rep(v/W)=(d(v,w_1), d(v,w_2), ...)
   \end{align*}
-=======
-    For an ordered subset $W=(w_1, w_2, ...)$ of vertices in $G$, the representation of a vertex $v \in G$ with respect to $W$ denoted $rep(v/W)$ is: \\
-  $rep(v/W)=(d(v,w_1), d(v,w_2), ...)$
->>>>>>> ef84966ad86e02b5520c645fd02f2ea7c5e19502
  \end{defin}
     
  \begin{defin}[Resolving Set]:\\
@@ -138,7 +136,7 @@ Furthermore we will attempt to investigate what properties of these graphs make 
     (1)	edge (2)
     (3) edge (4)
     (4) edge (5)
-    (3) edge [-,dashed] (5);
+    (3) edge [dashed, printersafe] (5);
 \end{tikzpicture}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -165,7 +163,7 @@ $G$ is encodable under $W$ if and only if for all nonadjacent $\ v_1,\ v_2\in G$
 \end{lem}
 \begin{proof}
 Let $G$ be a graph with basis $W$. Let $R$ be the representation set of $G$ with respect to $W$. 
-Assume that for some pair of vertices $v_1,\ v_2\ \in G$, $\ \exists\ w \in W$ s.t. $\left| d(v_1,w)-d(v_2,w)\right| > 1$.
+Assume that for some pair of vertices $v_1,\ v_2\ \in G$, $\ \exists\ w \in W$ such that $\left| d(v_1,w)-d(v_2,w)\right| > 1$.
 If we construct a graph $H$ from $R$ following the encoding scheme described above, $v_1,\ v_2$ will be adjacent in $H$. 
 Then $H \neq G$ and so $G$ is not encodable under $W$.
 \end{proof}
@@ -197,7 +195,7 @@ Observe the following\\
 \path[thick]
   (6) edge (7)
       edge (8)
-      edge [dashed] (10)
+      edge [dashed, printersafe] (10)
   (7) edge (8)
       edge (9)
   (8) edge (10);
@@ -218,8 +216,8 @@ Observe the following\\
   (2) edge (3)
       edge (4)
   (3) edge (5)
-  (5) edge [dashed] (2)
-      edge [dashed] (4);
+  (5) edge [dashed, printersafe] (2)
+      edge [dashed, printersafe] (4);
 
 \node[main node] (8) [right of=2] {x};
 \node[main node] (6) [below right of=8]{};
@@ -230,12 +228,12 @@ Observe the following\\
 \path[thick]
   (6) edge (7)
       edge (8)
-      edge [dashed] (9)
-      edge [dashed] (10)
+      edge [dashed, printersafe] (9)
+      edge [dashed, printersafe] (10)
   (7) edge (8)
       edge (9)
   (8) edge (10)
-  (9) edge [dashed] (10);
+  (9) edge [dashed, printersafe] (10);
 \end{tikzpicture}
 \\
 The bull graph pictured above has basis size 2. There are 4 possible bases for it up to isomorphism but is W-encodable only under one of them.
@@ -273,12 +271,12 @@ For the other 3 bases it is possible to add edges (shown dotted) without affecti
 \end{lem}
 \begin{proof}
  Suppose that $W \subset H$. 
- Let $v$ be a cut vertex of $G$ s.t. $G-v$ has more than 2 components. Since $W \subset H$, the path from any vertex not in $H$ to any element of $W$ must pass through $v$.
+ Let $v$ be a cut vertex of $G$ such that $G-v$ has more than 2 components. Since $W \subset H$, the path from any vertex not in $H$ to any element of $W$ must pass through $v$.
  Then there exist vertices $u_1,\ u_2$ adjacent to $v$ such that $d(u_1, w_i) = d(u_2, w_i) = d(v, w_i) + 1$ for all $w_i \in W$.
  In this case, $r(u_1/W) = r(u_2/W)$. Then $W$ cannot be not a resolving set for $G$.\\
  We can show without loss of generality that the same is true for any cut vertex $v$ whenever some component of $G-v$ other than $H$ is not path.\\
  Observe that if $G$ is not a path it contains at least one $deg > 2$ vertex. 
- Let $l$ be a $deg > 2$ vertex in $G$ s.t. for all$u_i$ s.t. $deg(u_i)>2, d(u_i, v) \geq d(l, v)$. 
+ Let $l$ be a $deg > 2$ vertex in $G$ such that for all$u_i$ such that $deg(u_i)>2, d(u_i, v) \geq d(l, v)$. 
  Then by the same argument as above we see there are 2 adjacent vertices with the same representation and again $W$ cannot be a resolving set of $G$.
  \end{proof}
 
@@ -290,7 +288,6 @@ For the other 3 bases it is possible to add edges (shown dotted) without affecti
  Let $G', H', S', L', W'$ be the same objects described above after subdivision of $(u,v)$ with vertex $e$ and the additional constraint that
  $e \notin H' \cup S'$.\\
  \\
-<<<<<<< HEAD
  %$i:$ If only $H$ contains a basis element then $MD(G)\leq MD(G')$.\\
  %$ii:$ If $H$ and $S$ both contain basis elements then $MD(G') = MD(G)$
  If $H$ and $S$ both contain basis elements then $MD(G') = MD(G)$
@@ -312,13 +309,13 @@ Then $d(v_s, u)<d(u_h,u)$ and consequently $d(v_s, e)<d(u_h, e)$.\\
 Without loss of generality we can show that because for all $w_s\in W_S\subset S$, $d(u_h, w_s)<d(v_s, w_s)$ we must have
 $d(u_h, e)<d(v_s,e)$. This is a contradiction. Then such a pair of vertices cannot possibly exist and so we have $MD(G') \leq MD(G)$.\\
 Now suppose that $MD(G) > MD(G')$\\
-In this case we see that we must have a pair of vertices $u_h \in H$, $v_s\in S$ such that
+In this case we see that we must have a pair of vertices $u_h \in H'$, $v_s\in S'$ such that
 \begin{align*}
  r(u_h/W') + (\underbrace{1,\dots}_{n},0,\dots) = r(v_s/W') + (\underbrace{0,\dots}_{n},1,\dots)
 \end{align*}
 Where the first n elements of each representation correspond to the distances from elements of $W'_h$ up to rearrangement. 
 Again we will suppose that such a pair of vertices exists.\\ 
-Then we can see that for basis elements in $H$:
+Then we can see that for basis elements in $H'$:
 \begin{align*}
 d(u_h, w_h) + 1 &= d(v_s,w_h)\\
 d(u_h, u) + d(u, w_h) + 1 &= d(v_s, u) + d(u, w_h)\\
@@ -327,23 +324,12 @@ d(u_h, u) + 1 &> d(v_s, u) - 1\\
 d(u_h, u) + d(u, e) &> d(v_s, u) - d(u, e)\\
 d(u_h, e) &> d(v_s, e)
 \end{align*}
-And without loss of generality by considering basis elements in $V$:
+And without loss of generality by considering basis elements in $S'$:
 \begin{align*}
  d(v_s, e) &> d(u_h, e)
 \end{align*}
 Then $d(v_s, e) >< d(u_h, e)$, a clear contradiction.\\
 Thus $MD(G)=MD(G')$.
-=======
- $i:$ If only $H$ contains a basis element then $MD(G)\leq MD(G')$.\\
- $ii:$ If $H$ and $S$ both contain basis elements then $MD(G')\eq MD(G)$.
-\end{lem}
-\begin{proof}
- $i)$ Since $S'$ contains no basis elements, $S'$ must be a path.\\
- We can contract $(u,e)$ to $u$ to construct $G$ from $G'$.\\
- Then for each element $v_{s'}$ of $S'$, $rep(v_s/W) = rep(v_s/W) - (1,...,1)$ 
- \\$ii)$First we show that $MD(G')\leq MD(G)$.\\
- Now we show that $MD(G)\leq MD(G')$.\\
->>>>>>> ef84966ad86e02b5520c645fd02f2ea7c5e19502
 \end{proof}
 
 

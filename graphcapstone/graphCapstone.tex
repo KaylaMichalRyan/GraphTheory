@@ -59,8 +59,8 @@ thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
 \begin{document}
 
 
-\title[Abstract Algebra Project]{Investigation of resolving sets and metric dimension}
-\thanks{Dogan Comez}
+\title[Investigation of resolving sets and metric dimension]{Investigation of resolving sets and metric dimension}
+%\thanks{Dogan Comez}
 \author[K.~ R. Ryan]{Kyle Ryan\\{Advisors: Trevor McGuire, Warren Shreve}}
 
 
@@ -309,13 +309,13 @@ Then $d(v_s, u)<d(u_h,u)$ and consequently $d(v_s, e)<d(u_h, e)$.\\
 Without loss of generality we can show that because for all $w_s\in W_S\subset S$, $d(u_h, w_s)<d(v_s, w_s)$ we must have
 $d(u_h, e)<d(v_s,e)$. This is a contradiction. Then such a pair of vertices cannot possibly exist and so we have $MD(G') \leq MD(G)$.\\
 Now suppose that $MD(G) > MD(G')$\\
-In this case we see that we must have a pair of vertices $u_h \in H$, $v_s\in S$ such that
+In this case we see that we must have a pair of vertices $u_h \in H'$, $v_s\in S'$ such that
 \begin{align*}
  r(u_h/W') + (\underbrace{1,\dots}_{n},0,\dots) = r(v_s/W') + (\underbrace{0,\dots}_{n},1,\dots)
 \end{align*}
 Where the first n elements of each representation correspond to the distances from elements of $W'_h$ up to rearrangement. 
 Again we will suppose that such a pair of vertices exists.\\ 
-Then we can see that for basis elements in $H$:
+Then we can see that for basis elements in $H'$:
 \begin{align*}
 d(u_h, w_h) + 1 &= d(v_s,w_h)\\
 d(u_h, u) + d(u, w_h) + 1 &= d(v_s, u) + d(u, w_h)\\
@@ -324,7 +324,7 @@ d(u_h, u) + 1 &> d(v_s, u) - 1\\
 d(u_h, u) + d(u, e) &> d(v_s, u) - d(u, e)\\
 d(u_h, e) &> d(v_s, e)
 \end{align*}
-And without loss of generality by considering basis elements in $V$:
+And without loss of generality by considering basis elements in $S'$:
 \begin{align*}
  d(v_s, e) &> d(u_h, e)
 \end{align*}
