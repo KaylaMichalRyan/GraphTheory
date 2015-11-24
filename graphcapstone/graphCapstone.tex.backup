@@ -59,8 +59,8 @@ thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
 \begin{document}
 
 
-\title[Abstract Algebra Project]{Investigation of resolving sets and metric dimension}
-\thanks{Dogan Comez}
+\title[Investigation of resolving sets and metric dimension]{Investigation of resolving sets and metric dimension}
+%\thanks{Dogan Comez}
 \author[K.~ R. Ryan]{Kyle Ryan\\{Advisors: Trevor McGuire, Warren Shreve}}
 
 
@@ -158,14 +158,14 @@ Furthermore we will attempt to investigate what properties of these graphs make 
 \begin{lem}
 $G$ is encodable under $W$ if and only if for all nonadjacent $\ v_1,\ v_2\in G$ there exists $w \in W$ such that:
 \begin{align*}
-| d(v_1,w)-d(v_2,w)| > 1 
+| d(v_1,w)-d(v_2,w)| \leq 1 
 \end{align*}
 \end{lem}
 \begin{proof}
 Let $G$ be a graph with basis $W$. Let $R$ be the representation set of $G$ with respect to $W$. 
 Assume that for some pair of vertices $v_1,\ v_2\ \in G$, $\ \exists\ w \in W$ such that $\left| d(v_1,w)-d(v_2,w)\right| > 1$.
 If we construct a graph $H$ from $R$ following the encoding scheme described above, $v_1,\ v_2$ will be adjacent in $H$. 
-Then $H \neq G$ and so $G$ is not encodable under $W$.
+Then $H \neq G$ and so $G$ is not encodable under $W$. If for all nonadjacent $v_1,\ v_2\ \in G$
 \end{proof}
 
 \begin{ex}
@@ -281,23 +281,26 @@ For the other 3 bases it is possible to add edges (shown dotted) without affecti
  \end{proof}
 
 \begin{lem}[Bridge Subdivision Lemma]
- Let $G$ be a graph with a bridge $(u,v)$.\\
- Let $H, S$ be the largest connected induced subgraphs of $G$ such that $v\notin H, u\notin S$.\\
- Let $L$ be the $uv$ path separating $H$ and $S$.\\
- Let $W$ be a basis of $G$.\\
- Let $G', H', S', L', W'$ be the same objects described above after subdivision of $(u,v)$ with vertex $e$ and the additional constraint that
- $e \notin H' \cup S'$.\\
- \\
  %$i:$ If only $H$ contains a basis element then $MD(G)\leq MD(G')$.\\
  %$ii:$ If $H$ and $S$ both contain basis elements then $MD(G') = MD(G)$
- If $H$ and $S$ both contain basis elements then $MD(G') = MD(G)$
+ If $G$ is a graph with a bridge $L$ separating two non path subraphs which are only connected through $L$ 
+ then subdivision of $L$ leaves the bases of $G$ unchanged.  
 \end{lem}
 \begin{proof}$\ $\\
  %$i)$ Since $S'$ contains no basis elements, $S'$ must be a path.\\
  %We can contract $(u,e)$ to $u$ to construct $G$ from $G'$.\\
  %Then for each element $v_{s'}$ of $S'$, $rep(v_s/W) = rep(v_s/W) - (1,...,1)$ \\\\
- %$ii)$ Suppose that $MD(G') > MD(G)$, this can only be true if for some $u_h \in H$, $v_s\in S$
- Suppose that $MD(G') > MD(G)$, this can only be true if for some $u_h \in H$, $v_s\in S$
+ %$ii)$ Suppose that $MD(G') > MD(G)$, this can only be true if for some $u_h \in H$, $v_s\in S$ 
+ Let $G$ be a graph with a bridge $(u,v)$.\\
+ Let $H, S$ be the largest connected induced subgraphs of $G$ such that\\ $ u\in H,\ v\notin H, v\in S,\ u\notin S$.\\
+ Let $L$ be the $uv$ path separating $H$ and $S$.\\
+ Let $W$ be a basis of $G$.\\
+ Let $G', H', S', L', W'$ be the same objects described above after subdivision of $(u,v)$ with vertex $e$ and the additional constraint that
+ $e \notin H' \cup S'$.\\
+ 
+ $i)$%If H and S both contain basis elements in $G$, then $W = W'$\\
+ If $H$ and $S$ both contain basis elements in $G$, then $W$ resolves $G'$.\\ 
+ Suppose that for some basis $W$ of $G$, $W$ does not resolve $G'$, this can only be true if for some $u_h \in H$, $v_s\in S$
 \begin{align*}
  r(u_h/W) + (\underbrace{0,\dots}_{n},1,\dots) = r(v_s/W) + (\underbrace{1,\dots}_{n},0,\dots)
 \end{align*}
@@ -307,8 +310,8 @@ Every $v_sw_h$ path for all $w_h$ passes through $L$. Then $d(v_s, w_h)=d(v_s, u
 By the triangle inequality, $d(u_h, w_h) \leq d(u_h, u) + d(u, w_h)$ for all $u_h$ in $H$.
 Then $d(v_s, u)<d(u_h,u)$ and consequently $d(v_s, e)<d(u_h, e)$.\\
 Without loss of generality we can show that because for all $w_s\in W_S\subset S$, $d(u_h, w_s)<d(v_s, w_s)$ we must have
-$d(u_h, e)<d(v_s,e)$. This is a contradiction. Then such a pair of vertices cannot possibly exist and so we have $MD(G') \leq MD(G)$.\\
-Now suppose that $MD(G) > MD(G')$\\
+$d(u_h, e)<d(v_s,e)$. This is a contradiction. Then such a pair of vertices cannot possibly exist and so we have $W$ resolves $G'$.\\
+$ii)$If $H'$ and $S'$ both contain basis elements in $G'$, then $W'$ resolves $G'$.\\ 
 In this case we see that we must have a pair of vertices $u_h \in H'$, $v_s\in S'$ such that
 \begin{align*}
  r(u_h/W') + (\underbrace{1,\dots}_{n},0,\dots) = r(v_s/W') + (\underbrace{0,\dots}_{n},1,\dots)
@@ -329,7 +332,9 @@ And without loss of generality by considering basis elements in $S'$:
  d(v_s, e) &> d(u_h, e)
 \end{align*}
 Then $d(v_s, e) >< d(u_h, e)$, a clear contradiction.\\
-Thus $MD(G)=MD(G')$.
+Thus $W'$ resolves $G$, and so $W = W'$\\ \\
+%$iii)$ If only $H$ contains a basis element then
+%From part $ii$ above we see that if $H'$ and $S'$ both contain basis elements then $H$
 \end{proof}
 
 
