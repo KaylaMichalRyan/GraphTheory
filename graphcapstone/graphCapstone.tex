@@ -7,7 +7,7 @@
 
 % you can add extra packages if you need them
 \usepackage{amsfonts, amssymb, amscd, amsmath, amsthm, enumerate, verbatim, calc, 
-thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
+thumbpdf, mathrsfs, graphicx, multicol, tabto, tabu, tikz}
 
 \usetikzlibrary{snakes}
 \tikzstyle{printersafe}=[snake=snake,segment amplitude=0 pt]
@@ -29,7 +29,7 @@ thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{cor}[thm]{Corollary}
 \newtheorem{prop}[thm]{Proposition}
-\newtheorem{mythm}[thm]{My Great Result}
+\newtheorem{con}[thm]{Construction}
 
 \theoremstyle{definition}
 \newtheorem{defin}[thm]{{Definition}}
@@ -67,17 +67,18 @@ thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
 
 \email{kyleryanmn@gmail.com, trevor.mcguire@ndsu.edu, warren.shreve@ndsu.edu}
 
-
-
-
-
 \maketitle
 % \setcounter{page}{***} % Please do not change this line
 
 
 \begin{abstract}
-        For any graph G it is possible to describe each of its vertices uniquely with respect to an ordered subset of vertices of G called a resolving set.
-    In this paper we will investigate properties associated with minimal resolving sets, known as bases and conditions under which changing G affects its bases. 
+        
+        Metric dimension is known for some subsets of graphs which will be discussed later, but in general it is very difficult or simply time consuming to determine.
+        The intent of this paper is to investigate whether there is a set of graphs for which having a known metric dimension or basis allows us to 
+        determine metric dimension or basis after adding or removing a vertex or an edge. 
+        We will introduce a new construction which can be used to describe the encodability of a graph with respect to one or more of its bases.
+        We will also introduce a new proposition governing where elements of a basis can lie in a graph and a new theorem describing conditions under 
+        which subdividing bridges has no effect on the basis of a graph.
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%
@@ -87,12 +88,10 @@ thumbpdf, mathrsfs, graphicx, multicol, tabu, tikz}
 \section{introduction}
 
     %The basics of what you're doing: relevant tools, defs techniques etc%
+    For any graph G it is possible to describe each of its vertices uniquely with respect to an ordered subset of vertices of G called a resolving set.
     Describing a graph by its basis is often very difficult. Every known algorithm for finding a basis of an arbitary graph is greedy and even 
     finding the metric dimension for a graph is currently considered to be of NP-Hard complexity. 
-Metric dimension is known for some subsets of graphs which will be discussed later, but in general it is very difficult or simply time consuming to determine.
-The intent of this paper is to investigate whether there is a set of graphs for which having a known metric dimension allows us to determine metric dimension after adding or removing an edge.
-Furthermore we will attempt to investigate what properties of these graphs make it possible to determine metric dimension for them after adding or removing an edge.
-    It is assumed for the remained of this paper that we are dealing with complete graphs.
+    It is assumed for the remainder of this paper that we are dealing with simple connected graphs.
     
     For this investigation we will begin with several basic definitions that might not be part of a typical introduction to graph theory.
 
@@ -109,368 +108,10 @@ Furthermore we will attempt to investigate what properties of these graphs make 
   \begin{align*}
   r(v_1/W) \neq  r(v_2/W)
   \end{align*}
-  Equivalently, whenever.
-  0$-
-  ------------
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  ..............................................................................................................................................00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000r(G/W)$ is injective.
+  Equivalently, whenever. $r(G/W)$ is injective.
  \end{defin}
  
- \begin{defin}[Basis of a graph]\ \\
+ \begin{defin}[Basis of a graph (Also called reference set)]\ \\
   A resolving set $W$ of $G$ is called a $basis\ of\ G$ if for any other resolving set $H$ of $G$, 
   \begin{align*}
    |H| \geq |W|
@@ -482,12 +123,10 @@ Furthermore we will attempt to investigate what properties of these graphs make 
   The metric dimension of a graph $G$ denoted $MD(G)$ is the order of any basis for $G$.
  \end{defin}
 
-
-
 \begin{ex}
- The path graph $P_3$ has a metric dimension of 1. Simply calling $W$ the set containing one leaf node of $P_3$ is sufficient to construct a basis for $P_3$.
- By adding any edge to $P_3$, $P_3$ becomes $K_3$ which has a metric dimension of 2.
-\end{ex}
+
+\begin{figure}
+\caption{The graph $P_3$ before and after adding an edge}
  \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm,
                     thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
   \node[main node] (1) {x};
@@ -501,42 +140,58 @@ Furthermore we will attempt to investigate what properties of these graphs make 
     (4) edge (5)
     (3) edge [dashed, printersafe] (5);
 \end{tikzpicture}
+\end{figure}
+The path graph $P_3$ as shown in figure 1 has a metric dimension of 1. Simply calling $W$ the set containing one leaf node of $P_3$ is sufficient to construct a basis for $P_3$.
+By adding any edge to $P_3$(shown dotted), $P_3$ becomes $K_3$ which has a metric dimension of 2.
+\end{ex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%       SECTION 1, B-Encodings          %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{encodability of graphs with respect to their bases}
-
+Nearly any collection of information can be described as a graph. 
+As such, any method for reducing the space required to represent a graph can be an incredibly useful tool.
+In this section we will focus on properties that allow a graph to be encoded by its image $r(G/W)$ for some basis $W$.
 
   \begin{defin}[Representation set of a graph]\ \\
   The representation set of a graph with respect to a basis $W$ is the set $H=\{r(v/W)\mid v\in G\}$.   
   \end{defin}
 
+  \begin{con}
+   Let $G$ be a graph with a basis $W$. Let $G'$ be the graph constructed from $r(G/W)$ by connecting elements of $r(G/W)$ if and only if $r(v_i/W)-r(v_j/W) \in \{0, \pm 1\}$.
+   We will denote this construction $\mathbb{N}^{|W|} \mapsto G'$ as $\xi (r(G/W))$.
+  \end{con}
+
+  
   \begin{defin}[Unique Encoding]\ \\
-   If we can construct a graph $G$ from its representation set $H$ by connecting vertices in $G$ 
-   if their representations differ by no more than 1 in each place then we say that $G$ is uniquely encoded by $H$.
-   Furthermore we say that $G$ is uniquely encodeable with respect to its basis $W$ or $G$ is enccodable under $W$.
+   We call $G$ uniquely encodeable with respect to a basis $W$ or $W$-encodable if
+   \begin{align*}
+    \xi (r(G/W)) = G.
+   \end{align*}
   \end{defin}
 
-\begin{lem}
-A graph $G$ is encodable under $W$ if and only if for all nonadjacent $\ v_1,\ v_2\in G$ there exists $w \in W$ such that:
+\begin{prop}
+A graph $G$ is uniquely encodable under $W$ if and only if for all nonadjacent $\ v_1,\ v_2\in G$ there exists $w \in W$ such that:
 \begin{align*}
 | d(v_1,w)-d(v_2,w)| > 1 
 \end{align*}
-\end{lem}
+\end{prop}
 \begin{proof}
 Let $G$ be a graph with basis $W$. Let $R$ be the representation set of $G$ with respect to $W$. 
 Assume that for some pair of non adjacent vertices $v_1,\ v_2\ \in G$, $\ \exists\ w \in W$ such that $\left| d(v_1,w)-d(v_2,w)\right| \leq 1$.
 If we construct a graph $H$ from $R$ following the encoding scheme described above, $v_1,\ v_2$ will be adjacent in $H$. 
-Then $H \neq G$ and so $G$ is not encodable under $W$. If for all nonadjacent $\ v_1,\ v_2\in G$ there exists $w \in W$ such that 
+Then $H \neq G$ and so $G$ is not encodable under $W$.\\ 
+\ If for all nonadjacent $\ v_1,\ v_2\in G$ there exists $w \in W$ such that 
 $|d(v_1,w)-d(v_2,w)| > 1$, no pair of nonadjacent vertices will be adjacent in $H$. For every pair of adjacent vertices $v_1,\ v_2$ in $G$ and $w\in W$,  
 $\left| d(v_1,w)-d(v_2,w)\right| \leq 1$ 
 and so they will be adjacent in $H$. Thus $G$ is encodable under $W$ if and only if for all nonadjacent $\ v_1,\ v_2\in G$ there exists $w \in W$ such that $|d(v_1,w)-d(v_2,w)| > 1$.
 \end{proof}
-
+\clearpage
 \begin{ex}
-Observe the following\\
 
+\begin{figure}
+
+\caption{The four nonisomorphic bases of the bull graph}
 \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm,
                     thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
 \node[main node] (1) {x};
@@ -601,14 +256,23 @@ Observe the following\\
   (8) edge (10)
   (9) edge [dashed, printersafe] (10);
 \end{tikzpicture}
-\\
-The bull graph pictured above has basis size 2. There are 4 possible bases for it up to isomorphism but is W-encodable only under one of them.
+
+\end{figure}
+
+The bull graph pictured above has basis size 2. There are 4 possible bases for it up to isomorphism but it is W-encodable only under one of them.
 For the other 3 bases it is possible to add edges (shown dotted) without affecting $r(v/W)$ for any $v \in G$.
 
+ 
+
 \end{ex}
+\clearpage
 
 
-\section{Upper and Lower Bounds on Metric Dimension}
+\section{Properties of bases in graphs with cut vertices}
+In this section we focus on properties of graphs with cut vertices. 
+Generally the literature for resolving sets focuses on a very specific class of graphs, like wheel graphs or trees.
+Cut vertices and bridges are common in a very broad range of graphs and so this section focuses on properties of graphs
+with cut vertices in the hope that these simple tools may lead to the development of more complex tools in the future.
 
 %\begin{lem}
 % let $G$ be a unicyclic graph. Let $L$ be the cycle in $G$. Let $l$ be the number of $deg > 2$ vertices of $L$. 
@@ -631,10 +295,10 @@ For the other 3 bases it is possible to add edges (shown dotted) without affecti
 %\begin{proof}
  
 %\end{proof}
-\begin{lem}
+\begin{prop}
  Let $G$ be a graph with a cut vertex $v$ and resolving set $W$. Let $H$ be a component of $G-v$. 
  If $G-v$ has more than two components or if for any component $L$ of $G-v$, $L$ is not a path, then $W\nsubseteq H$.
-\end{lem}
+\end{prop}
 \begin{proof}
  Suppose that $W \subset H$. 
  Let $v$ be a cut vertex of $G$ such that $G-v$ has more than 2 components. Since $W \subset H$, the path from any vertex not in $H$ to any element of $W$ must pass through $v$.
@@ -646,12 +310,12 @@ For the other 3 bases it is possible to add edges (shown dotted) without affecti
  Then by the same argument as above we see there are 2 adjacent vertices with the same representation and again $W$ cannot be a resolving set of $G$.
  \end{proof}
 
-\begin{lem}[Bridge Subdivision Lemma]\ \\
+\begin{thm}[Bridge Subdivision Lemma]\ \\
  %$i:$ If only $H$ contains a basis element then $MD(G)\leq MD(G')$.\\
  %$ii:$ If $H$ and $S$ both contain basis elements then $MD(G') = MD(G)$
  If $G$ is a graph with a bridge $L$ separating two non path subraphs which are only connected through $L$ 
  then subdivision of $L$ leaves the bases of $G$ unchanged.  
-\end{lem}
+\end{thm}
 \begin{proof}$\ $\\
  %$i)$ Since $S'$ contains no basis elements, $S'$ must be a path.\\
  %We can contract $(u,e)$ to $u$ to construct $G$ from $G'$.\\
@@ -677,6 +341,7 @@ By the triangle inequality, $d(u_h, w_h) \leq d(u_h, u) + d(u, w_h)$ for all $u_
 Then $d(v_s, u)<d(u_h,u)$ and consequently $d(v_s, e)<d(u_h, e)$.\\
 Without loss of generality we can show that because for all $w_s\in W_S\subset S$, $d(u_h, w_s)<d(v_s, w_s)$ we must have
 $d(u_h, e)<d(v_s,e)$. This is a contradiction. Then such a pair of vertices cannot possibly exist and so we have $W$ resolves $G'$.\\
+
 $ii)$If $H'$ and $S'$ both contain basis elements in $G'$, then $W'$ resolves $G'$.\\ 
 In this case we see that we must have a pair of vertices $u_h \in H'$, $v_s\in S'$ such that
 \begin{align*}
@@ -715,980 +380,16 @@ Thus $W'$ resolves $G$, and so $W = W'$.\\ \\
 
 
 
-
-
+\section{Conclusion}
+In this paper we introduced several new tools for finding bases of graphs and for describing graphs once a basis has already been found.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% References and Citations %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cite{Chartrand:2010:GDF:1941879}
+
 \nocite{*}
 \bibliographystyle{plain}
 \bibliography{mybib}  % add references to the list of references saved in the file mybib.bib
 
 
 \end{document}
--+++++++++++++0+
-+-..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................--+.--
-333.......
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
