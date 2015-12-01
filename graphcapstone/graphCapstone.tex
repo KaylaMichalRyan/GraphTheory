@@ -100,7 +100,7 @@ thumbpdf, mathrsfs, graphicx, multicol, tabto, tabu, tikz}
   \begin{align*}
   r(v/W)=(d(v,w_1), d(v,w_2), ...)
   \end{align*}
-  Then $r(G/W)$ is the image of $r$ with respect to $W$ when applied to $G$
+  Then $r(G/W)$ is the image of $r$ with respect to $W$ when applied to $G$.
  \end{defin}
     
  \begin{defin}[Resolving Set]\ \\
@@ -194,11 +194,11 @@ and so they will be adjacent in $H$. Thus $G$ is encodable under $W$ if and only
 \caption{The four nonisomorphic bases of the bull graph}
 \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm,
                     thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
-\node[main node] (1) {x};
-\node[main node] (2) [above right of=1] {};
-\node[main node] (3) [above left of=1] {};
-\node[main node] (4) [above of=2] {y};
-\node[main node] (5) [above of=3] {};
+\node[main node] (1) [label={(0,2)}] {x};
+\node[main node] (2) [above right of=1, label={270:(1,1)}] {};
+\node[main node] (3) [above left of=1, label={270:(1,2)}] {};
+\node[main node] (4) [above of=2, label={(2,0)}] {y};
+\node[main node] (5) [above of=3, label={(2,3)}] {};
 
 \path[thick]
   (1) edge (2)
@@ -207,11 +207,11 @@ and so they will be adjacent in $H$. Thus $G$ is encodable under $W$ if and only
       edge (4)
   (3) edge (5);
 
-\node[main node] (8) [right of=2] {x};
-\node[main node] (6) [below right of=8]{};
-\node[main node] (7) [above right of=6] {};
-\node[main node] (9) [above of=7] {y};
-\node[main node] (10) [above of=8] {};
+\node[main node] (8) [right of=2, label={270:(0,2)}] {x};
+\node[main node] (6) [below right of=8, label={270:(1,2)}]{};
+\node[main node] (7) [above right of=6, label={270:(1,1)}] {};
+\node[main node] (9) [above of=7, label={(2,0)}] {y};
+\node[main node] (10) [above of=8, label={(1,3)}] {};
 
 \path[thick]
   (6) edge (7)
@@ -225,11 +225,11 @@ and so they will be adjacent in $H$. Thus $G$ is encodable under $W$ if and only
 
 \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm,
                     thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
-\node[main node] (1) {x};
-\node[main node] (2) [above right of=1] {};
-\node[main node] (3) [above left of=1] {y};
-\node[main node] (4) [above of=2] {};
-\node[main node] (5) [above of=3] {};
+\node[main node] (1) [label={(0,1)}] {x};
+\node[main node] (2) [above right of=1, label={270:(1,1)}] {};
+\node[main node] (3) [above left of=1, label={270:(1,0)}] {y};
+\node[main node] (4) [above of=2, label={(2,2)}] {};
+\node[main node] (5) [above of=3, label={(2,1)}] {};
 
 \path[thick]
   (1) edge (2)
@@ -240,11 +240,11 @@ and so they will be adjacent in $H$. Thus $G$ is encodable under $W$ if and only
   (5) edge [dashed, printersafe] (2)
       edge [dashed, printersafe] (4);
 
-\node[main node] (8) [right of=2] {x};
-\node[main node] (6) [below right of=8]{};
-\node[main node] (7) [above right of=6] {y};
-\node[main node] (9) [above of=7] {};
-\node[main node] (10) [above of=8] {};
+\node[main node] (8) [right of=2, label={270:(0,1)}] {x};
+\node[main node] (6) [below right of=8, label={270:(1,1)}]{};
+\node[main node] (7) [above right of=6, label={270:(1,0)}] {y};
+\node[main node] (9) [above of=7, label={(2,1)}] {};
+\node[main node] (10) [above of=8, label={(1,2)}] {};
 
 \path[thick]
   (6) edge (7)
@@ -310,6 +310,34 @@ with cut vertices in the hope that these simple tools may lead to the developmen
  Then by the same argument as above we see there are 2 adjacent vertices with the same representation and again $W$ cannot be a resolving set of $G$.
  \end{proof}
 
+ \begin{ex}
+\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm,
+                    thick,main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
+\node[main node] (1) [label={v1}] {};
+\node[main node] (2) [above right of=1, label={v2}] {};
+\node[main node] (3) [below right of=1, label={v3}] {};
+\node[main node] (4) [above right of=3, label={v4}] {};
+\node[main node] (5) [right of =4, label={v5}] {};
+\node[main node] (6) [above right of =5, label={v6}] {};
+\node[main node] (7) [below right of =5, label={v7}] {};
+\node[main node] (8) [above right of =7, label={v8}] {};
+
+\path[thick]
+  (1) edge (2)
+      edge (3)
+  (4) edge (2)
+      edge (3)
+      edge (5)
+  (5) edge (6)
+      edge (7)
+  (8) edge (6)
+      edge (7);
+
+      
+\end{tikzpicture}
+k
+\end{ex}
+
 \begin{thm}[Bridge Subdivision Lemma]\ \\
  %$i:$ If only $H$ contains a basis element then $MD(G)\leq MD(G')$.\\
  %$ii:$ If $H$ and $S$ both contain basis elements then $MD(G') = MD(G)$
@@ -369,13 +397,10 @@ Thus $W'$ resolves $G$, and so $W = W'$.\\ \\
 \end{proof}
 
 
-%\begin{lem}
-% Let $G$ be any graph. Let $H$ be the graph obtained by edge contractions on $G$. 
-% If only the number of degree 2 vertices is changed, 
-%\end{lem}
-%\begin{proof}
- 
-%\end{proof}
+\begin{ex}
+ j
+\end{ex}
+
 
 
 
